@@ -72,8 +72,10 @@ class pair{
 }
 class MarkSheet {
      String nameOfStu;
+     int roll;
      List<pair> marks;
-     public MarkSheet(String nameOfStu){
+     public MarkSheet(String nameOfStu,int r){
+        this.roll =r;
         this.nameOfStu = nameOfStu;
         marks = new ArrayList<>();
      }
@@ -105,7 +107,7 @@ class practice{
         l1.add("DSA");
         l1.add("CN");
         s1.setSub(l1);
-        MarkSheet m1 = new MarkSheet("Alice");
+        MarkSheet m1 = new MarkSheet("Alice",500001);
         List<pair> lm1 = new ArrayList<>();
         lm1.add(new pair("SE",90));
         lm1.add(new pair("OOPS",91));
@@ -121,24 +123,55 @@ class practice{
         l2.add("DSA");
         l2.add("CN");
         s2.setSub(l2);
-        MarkSheet m2 = new MarkSheet("Bob");
+        MarkSheet m2 = new MarkSheet("Bob",500002);
         List<pair> lm2 = new ArrayList<>();
-        lm1.add(new pair("SE",95));
-        lm1.add(new pair("OOPS",92));
-        lm1.add(new pair("MATH",85));
-        lm1.add(new pair("DSA",86));
-        lm1.add(new pair("CN",90));
+        lm2.add(new pair("SE",95));
+        lm2.add(new pair("OOPS",92));
+        lm2.add(new pair("MATH",85));
+        lm2.add(new pair("DSA",86));
+        lm2.add(new pair("CN",90));
         m2.setMarks(lm2);
+        Student s3 = new Student("Ben",500003);
+        List<String> l3 = new ArrayList<>();
+        l3.add("DBMS");
+        l3.add("OOS");
+        l3.add("MATH");
+        l3.add("OS");
+        l3.add("CN");
+        s3.setSub(l3);
+        MarkSheet m3 = new MarkSheet("Ben",500003);
+        List<pair> lm3 = new ArrayList<>();
+        lm3.add(new pair("DBMS",94));
+        lm3.add(new pair("OOS",92));
+        lm3.add(new pair("MATH",85));
+        lm3.add(new pair("OS",86));
+        lm3.add(new pair("CN",90));
+        m3.setMarks(lm3);
         TabulationSheet t1 = new TabulationSheet("OOPS");
         TabulationSheet t2 = new TabulationSheet("DSA");
+        TabulationSheet t3 = new TabulationSheet("SE");
+        TabulationSheet t4 = new TabulationSheet("MATH");
+        TabulationSheet t5 = new TabulationSheet("CN");
         List<Integer> lt1 = new ArrayList<>();
         lt1.add(91);
         lt1.add(92);
+        t1.setMarksOfStudent(lt1);
         List<Integer> lt2 = new ArrayList<>();
         lt2.add(90);
         lt2.add(86);
+        t2.setMarksOfStudent(lt2);
+        List<Integer> lt3= new ArrayList<>();
+        lt3.add(90);
+        lt3.add(86);
+        t3.setMarksOfStudent(lt3);
+        List<Integer> lt4 = new ArrayList<>();
+        lt4.add(90);
+        lt4.add(86);
+        t4.setMarksOfStudent(lt4);
+
         m1.printMarkSheet();
         m2.printMarkSheet();
+        m3.printMarkSheet();
         
         
     }
